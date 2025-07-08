@@ -5,6 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the application...'
+                // Grant execute permission to the mvnw script
+                sh 'chmod +x mvnw'
                 sh './mvnw clean package'
             }
         }
