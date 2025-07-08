@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    tools {
+        // Use the JDK tool configured in Jenkins
+        jdk 'JDK-21'
+    }
     stages {
         stage('Build') {
             steps {
