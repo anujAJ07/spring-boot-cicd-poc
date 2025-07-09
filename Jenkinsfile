@@ -18,6 +18,10 @@ pipeline {
             }
         }
         stage('Build Docker Image') {
+            agent {
+                // Run this stage inside a container that has Docker installed
+                docker { image 'docker:latest' }
+            }
             steps {
                 echo 'Building the Docker image...'
                 script {
